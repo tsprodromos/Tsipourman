@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Tsipourman</string>
+    <string name="welcome">My Tsipourman App!</string>
 </resources>
