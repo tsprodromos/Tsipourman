@@ -45,7 +45,7 @@
                 android:id="@+id/explain_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Πως λετουργεί το Tsipourman:"
+                android:text="Πως λειτουργεί το Tsipourman:"
                 android:textColor="#000000"
                 android:textSize="20sp"
                 android:textStyle="bold" />
