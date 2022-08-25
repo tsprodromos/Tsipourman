@@ -27,12 +27,12 @@ public class LoginActivity extends AppCompatActivity {
         btnlogin=findViewById(R.id.loginbtn);
 
         DB= new DBHelper(this);
-        session = new Session(this);
+       session = new Session(this);
 
-       // if(session.loggedin()){
-         //   startActivity(new Intent(LoginActivity.this,MainActivity.class));
-           // finish();
-        //}
+       if(session.loggedin()){
+         startActivity(new Intent(LoginActivity.this,MainActivity.class));
+          finish();
+        }
 
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,8 +48,8 @@ public class LoginActivity extends AppCompatActivity {
                     if(checkusserpass){
                         Toast.makeText(LoginActivity.this,"Login Successful", Toast.LENGTH_SHORT).show();
                         session.setLoggedin(true);
-                       // Intent intent = new Intent(LoginActivity.this,MainActivity.class);
-                       // startActivity(intent);
+                       Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+                       startActivity(intent);
                     }else{
                         Toast.makeText(LoginActivity.this,"Login Failed", Toast.LENGTH_SHORT).show();
                     }

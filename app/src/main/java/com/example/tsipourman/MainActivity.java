@@ -16,9 +16,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         super.onCreate(savedInstanceState);
         session= new Session(this);
-        if(!session.loggedin()){
-            logout();
-        }
+        //if(!session.loggedin()){
+        //    logout();
+       // }
 
         logout_bg = findViewById(R.id.logout_bg);
         logout_bg.setOnClickListener(new View.OnClickListener() {
