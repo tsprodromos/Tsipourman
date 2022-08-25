@@ -5,7 +5,7 @@
     android:id="@+id/mylineatlayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ce93d8"
+    android:background="#790e8b"
     android:orientation="vertical"
     tools:context=".WelcomeActivity">
 
@@ -26,9 +26,11 @@
                 android:id="@+id/welcome_string"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/anton"
+                android:gravity="center"
+
+                android:fontFamily="sans-serif-condensed"
                 android:text="@string/welcome"
-                android:textColor="#000000"
+                android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -45,8 +47,8 @@
                 android:id="@+id/explain_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Πως λειτουργεί το Tsipourman:"
-                android:textColor="#000000"
+                android:text="@string/tsipourman_app"
+                android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -66,15 +68,14 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card1"
-                android:layout_width="295dp"
+                android:layout_width="280dp"
                 android:layout_height="50dp"
                 android:layout_centerInParent="true"
                 android:layout_margin="16dp"
                 android:layout_marginTop="40dp"
                 android:layout_marginEnd="24dp"
-                android:background="#790e8b"
                 android:foregroundGravity="center"
-                app:cardBackgroundColor="#790e8b"
+                app:cardBackgroundColor="#ce93d8"
                 app:cardCornerRadius="30dp"
                 app:cardElevation="10dp">
 
@@ -83,7 +84,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
                     android:gravity="center"
-                    android:text="Κάνε εγγραφή στο Tsipourman App"
+                    android:text="@string/step1"
                     android:textColor="#FFFFFF"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
@@ -104,15 +105,14 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card2"
-                android:layout_width="295dp"
+                android:layout_width="280dp"
                 android:layout_height="50dp"
                 android:layout_centerInParent="true"
                 android:layout_margin="16dp"
                 android:layout_marginTop="80dp"
                 android:layout_marginEnd="24dp"
-                android:background="#790e8b"
                 android:foregroundGravity="center"
-                app:cardBackgroundColor="#790e8b"
+                app:cardBackgroundColor="#ce93d8"
                 app:cardCornerRadius="50dp"
                 app:cardElevation="10dp">
 
@@ -121,7 +121,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
                     android:gravity="center"
-                    android:text="Διάλεξε τα προϊόντα που θες"
+                    android:text="@string/step2"
                     android:textColor="#FFFFFF"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
@@ -142,15 +142,14 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card3"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
+                android:layout_width="280dp"
+                android:layout_height="60dp"
                 android:layout_centerInParent="true"
                 android:layout_margin="16dp"
                 android:layout_marginTop="80dp"
                 android:layout_marginEnd="24dp"
-                android:background="#790e8b"
                 android:foregroundGravity="center"
-                app:cardBackgroundColor="#790e8b"
+                app:cardBackgroundColor="#ce93d8"
                 app:cardCornerRadius="30dp"
                 app:cardElevation="10dp">
 
@@ -159,7 +158,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:gravity="center"
-                    android:text="Μόλις η παραγγελία σου είναι έτοιμη θα ειδοποιηθείς για την παράδοσή της"
+                    android:text="@string/step3"
                     android:textColor="#FFFFFF"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
@@ -176,8 +175,8 @@
                 android:id="@+id/registerbtn"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:background="@drawable/round"
-                android:text="Ξεκίνα"
+                android:background="@drawable/button_bg"
+                android:text="@string/register_bg_text"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="18sp"
@@ -190,11 +189,11 @@
 
             <Button
                 android:id="@+id/loginbtn"
-                android:layout_width="180dp"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/round"
-                android:text="Έχω ήδη λογαριασμό"
+                android:background="@drawable/button_bg"
+                android:text="@string/login_bg_text"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="18sp"

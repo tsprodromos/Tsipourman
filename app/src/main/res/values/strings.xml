@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">Tsipourman</string>
-    <string name="welcome">My Tsipourman App!</string>
+    <string name="welcome">Ο Tsipourman απευθύνεται αποκλειστικά σε μερακλήδες!</string>
     <string name="step1_text">Κάνε λογαριασμό στο Tsipourman App</string>
+    <string name="tsipourman_app">Πως λειτουργεί το Tsipourman App:</string>
+    <string name="step1">Κάνε εγγραφή στο Tsipourman App</string>
+    <string name="step2">Διάλεξε τα προϊόντα που θες</string>
+    <string name="step3">Μόλις η παραγγελία σου είναι έτοιμη θα ειδοποιηθείς για την παράδοσή της</string>
+    <string name="register_bg_text">Ξεκίνα</string>
+    <string name="login_bg_text">Έχω ήδη λογαριασμό</string>
 </resources>
