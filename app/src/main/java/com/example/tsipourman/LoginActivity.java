@@ -15,6 +15,7 @@ public class LoginActivity extends AppCompatActivity {
     EditText username,password;
     Button btnlogin;
     DBHelper DB;
+    Session session;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,12 @@ public class LoginActivity extends AppCompatActivity {
         btnlogin=findViewById(R.id.loginbtn);
 
         DB= new DBHelper(this);
+        session = new Session(this);
+
+       // if(session.loggedin()){
+         //   startActivity(new Intent(LoginActivity.this,MainActivity.class));
+           // finish();
+        //}
 
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,7 +47,8 @@ public class LoginActivity extends AppCompatActivity {
                     Boolean checkusserpass=DB.checkusernamepassword(user,pass);
                     if(checkusserpass){
                         Toast.makeText(LoginActivity.this,"Login Successful", Toast.LENGTH_SHORT).show();
-                       // Intent intent = new Intent(LoginActivity.this,IndexActivity.class);
+                        session.setLoggedin(true);
+                       // Intent intent = new Intent(LoginActivity.this,MainActivity.class);
                        // startActivity(intent);
                     }else{
                         Toast.makeText(LoginActivity.this,"Login Failed", Toast.LENGTH_SHORT).show();
