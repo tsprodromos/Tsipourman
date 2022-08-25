@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mylineatlayout"
+    android:id="@+id/mylinearlayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#790e8b"
@@ -59,13 +59,12 @@
             android:gravity="center"
             android:orientation="horizontal"
             android:padding="10dp">
-
             <ImageView
                 android:id="@+id/step1"
                 android:layout_width="45dp"
                 android:layout_height="35dp"
-                app:srcCompat="@drawable/step1" />
-
+                android:src="@drawable/step1"
+                />
             <androidx.cardview.widget.CardView
                 android:id="@+id/card1"
                 android:layout_width="280dp"
@@ -101,7 +100,8 @@
                 android:id="@+id/step2"
                 android:layout_width="45dp"
                 android:layout_height="35dp"
-                app:srcCompat="@drawable/step2" />
+                android:src="@drawable/step2"
+                 />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card2"
@@ -138,7 +138,7 @@
                 android:id="@+id/step3"
                 android:layout_width="45dp"
                 android:layout_height="35dp"
-                app:srcCompat="@drawable/step3" />
+                android:src="@drawable/step3" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card3"
@@ -198,7 +198,7 @@
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:padding="10dp"/>
-            />
+
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
