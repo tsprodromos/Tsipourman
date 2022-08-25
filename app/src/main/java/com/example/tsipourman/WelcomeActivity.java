@@ -24,16 +24,16 @@ public class WelcomeActivity extends AppCompatActivity {
         loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(WelcomeActivity.this,LoginActivity.class);
-                startActivity(intent);
+                Intent login_intent = new Intent(WelcomeActivity.this,LoginActivity.class);
+                startActivity(login_intent);
             }
         });
 
         registerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(WelcomeActivity.this,RegisterActivity.class);
-                startActivity(intent);
+                Intent register_intent = new Intent(WelcomeActivity.this,RegisterActivity.class);
+                startActivity(register_intent);
             }
         });
     }
