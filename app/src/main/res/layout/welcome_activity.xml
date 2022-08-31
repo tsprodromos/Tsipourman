@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".WelcomeActivity"
-    android:background="#790e8b">
+    android:background="#E75358">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -76,7 +76,7 @@
                     android:layout_marginTop="40dp"
                     android:layout_marginEnd="24dp"
                     android:foregroundGravity="center"
-                    app:cardBackgroundColor="#ce93d8"
+                    app:cardBackgroundColor="#231F20"
                     app:cardCornerRadius="30dp"
                     app:cardElevation="10dp">
 
@@ -114,7 +114,7 @@
                     android:layout_marginTop="80dp"
                     android:layout_marginEnd="24dp"
                     android:foregroundGravity="center"
-                    app:cardBackgroundColor="#ce93d8"
+                    app:cardBackgroundColor="#231F20"
                     app:cardCornerRadius="50dp"
                     app:cardElevation="10dp">
 
@@ -151,7 +151,7 @@
                     android:layout_marginTop="80dp"
                     android:layout_marginEnd="24dp"
                     android:foregroundGravity="center"
-                    app:cardBackgroundColor="#ce93d8"
+                    app:cardBackgroundColor="#231F20"
                     app:cardCornerRadius="30dp"
                     app:cardElevation="10dp">
 
@@ -180,14 +180,11 @@
                     android:background="@drawable/button_bg"
                     android:text="@string/register_bg_text"
                     android:textAllCaps="false"
-                    android:textColor="@color/white"
+                    android:textColor="@color/White"
                     android:textSize="18sp"
                     android:padding="10dp" />
 
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="20dp"
-                    android:layout_weight="1" />
+
 
                 <Button
                     android:id="@+id/loginbtn"
@@ -197,7 +194,7 @@
                     android:background="@drawable/button_bg"
                     android:text="@string/login_bg_text"
                     android:textAllCaps="false"
-                    android:textColor="@color/white"
+                    android:textColor="@color/White"
                     android:textSize="18sp"
                     android:padding="10dp"/>
 
@@ -246,7 +243,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_info"
-        app:layout_anchor="@id/bottomAppBar" />
+        app:layout_anchor="@id/bottomAppBar"
+        app:backgroundTint="#F39354"
+        />
     />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

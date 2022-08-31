@@ -3,6 +3,7 @@ package com.example.tsipourman;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -25,6 +26,7 @@ public class LoginActivity extends AppCompatActivity {
         username=findViewById(R.id.usernamelg);
         password=findViewById(R.id.passwordlg);
         btnlogin=findViewById(R.id.loginbtn);
+
 
         DB= new DBHelper(this);
        session = new Session(this);

@@ -7,6 +7,8 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 
 public class WelcomeActivity extends AppCompatActivity {
 
@@ -36,5 +38,15 @@ public class WelcomeActivity extends AppCompatActivity {
                 startActivity(register_intent);
             }
         });
+
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent info = new Intent(WelcomeActivity.this,InfoActivity.class);
+                startActivity(info);
+            }
+        });
+
     }
 }

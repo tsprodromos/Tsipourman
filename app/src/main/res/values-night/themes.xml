@@ -2,10 +2,16 @@
     <!-- Base application theme. -->
     <style name="Theme.Tsipourman" parent="Theme.MaterialComponents">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryDark">@color/purple_700</item>
-        <item name="colorAccent">@color/teal_200</item>
+        <item name="colorPrimary">@color/Indigo</item>
+        <item name="colorPrimaryDark">@color/Indigo</item>
+        <item name="colorAccent">@color/CornflowerBlue</item>
         <!-- Customize your theme here. -->
+    </style>
+    <style name="Theme.mytheme" parent="Theme.MaterialComponents.DayNight">
+        <item name="colorPrimary">#F39354</item>
+    </style>
+    <style name="Button.White" parent="ThemeOverlay.AppCompat">
+        <item name="colorAccent">@color/Black</item>
     </style>
 
 </resources>
