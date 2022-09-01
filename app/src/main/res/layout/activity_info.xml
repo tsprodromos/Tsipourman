@@ -18,20 +18,16 @@
         android:textColor="@color/White"
         android:textStyle="bold" />
 
+
     <ImageView
         android:id="@+id/imageView1"
-        android:layout_width="wrap_content"
-        android:layout_height="150dp"
-        android:layout_below="@id/article_hading1"
-        app:srcCompat="@drawable/tsipourman" />
-
-    <ScrollView
-        android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/imageView1">
+        android:layout_height="200dp"
+        android:layout_below="@id/article_hading1"
+        android:cropToPadding="false"
+        app:srcCompat="@drawable/tsipourman1" />
 
-        <androidx.cardview.widget.CardView
+    <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/imageView1"
@@ -43,18 +39,23 @@
             app:cardCornerRadius="30dp"
             app:cardElevation="10dp">
 
-            <TextView
-                android:id="@+id/article1"
+            <ScrollView
+                android:id="@+id/scrollView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/article_hading1"
-                android:lineSpacingExtra="5sp"
-                android:padding="@dimen/pading"
-                android:text="@string/paragraph"
-                android:textStyle="bold" />
+                android:layout_below="@id/imageView1">
 
+                <TextView
+                    android:id="@+id/article1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="5sp"
+                    android:padding="@dimen/pading"
+                    android:text="@string/paragraph"
+                    android:textStyle="bold" />
+            </ScrollView>
         </androidx.cardview.widget.CardView>
 
-    </ScrollView>
+
 </RelativeLayout>
 

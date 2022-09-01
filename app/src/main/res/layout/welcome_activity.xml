@@ -184,7 +184,9 @@
                     android:textSize="18sp"
                     android:padding="10dp" />
 
-
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="30dp" />
 
                 <Button
                     android:id="@+id/loginbtn"
