@@ -13,7 +13,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 public class WelcomeActivity extends AppCompatActivity {
 
     Button registerbtn,loginbtn;
-
+    DBHelper DB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.welcome_activity);
@@ -21,7 +21,7 @@ public class WelcomeActivity extends AppCompatActivity {
         registerbtn=findViewById(R.id.registerbtn);
         loginbtn=findViewById(R.id.loginbtn);
 
-
+        DB= new DBHelper(this);
 
         loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
