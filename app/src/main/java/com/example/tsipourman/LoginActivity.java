@@ -15,7 +15,6 @@ public class LoginActivity extends AppCompatActivity {
 
     EditText username,password;
     Button btnlogin;
-    DBHelper DB;
     Session session;
 
     @Override
@@ -28,7 +27,6 @@ public class LoginActivity extends AppCompatActivity {
         btnlogin=findViewById(R.id.loginbtn);
 
 
-        DB= new DBHelper(this);
        session = new Session(this);
 
        if(session.loggedin()){
@@ -40,25 +38,39 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String user=username.getText().toString();
-                String pass=password.getText().toString();
-
-                if(TextUtils.isEmpty(user) || TextUtils.isEmpty(pass)){
-                    Toast.makeText(LoginActivity.this,"All fiels Required", Toast.LENGTH_SHORT).show();
-                }else{
-                    Boolean checkusserpass=DB.checkusernamepassword(user,pass);
-                    if(checkusserpass){
-                        Toast.makeText(LoginActivity.this,"Login Successful", Toast.LENGTH_SHORT).show();
-                        session.setLoggedin(true);
-                       Intent intent = new Intent(LoginActivity.this,MainActivity.class);
-                       startActivity(intent);
-                    }else{
-                        Toast.makeText(LoginActivity.this,"Login Failed", Toast.LENGTH_SHORT).show();
+                final String user=username.getText().toString();
+                final String pass=password.getText().toString();
+                if(user.isEmpty() || pass.isEmpty()) {
+                    Toast.makeText(getApplicationContext(), "Fill all Fields", Toast.LENGTH_SHORT).show();
+                } else{
+                        MyDatabase myDatabase= MyDatabase.getMyDatabase(getApplicationContext());
+                        UserDao userDao= myDatabase.userDao();
+                        new Thread(new Runnable() {
+                            @Override
+                            public void run() {
+                                UserEntity userEntity = userDao.login(user,pass);
+                                if(userEntity == null){
+                                    runOnUiThread(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            Toast.makeText(getApplicationContext(),"Invalid Credentials",Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
+                                }else {
+                                    String name = userEntity.getUsername();
+                                    startActivity(new Intent(LoginActivity.this,MainActivity.class).putExtra("name",name));
+                                    runOnUiThread(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            Toast.makeText(getApplicationContext(), "Login Succesfully!", Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
+                                }
+                            }
+                        }).start();
                     }
                 }
-            }
         });
-
 
     }
 }
