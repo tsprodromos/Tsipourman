@@ -24,8 +24,19 @@ public class LabelEntity {
         @ColumnInfo(name = "price")
           String price;
 
-        @ColumnInfo(name ="logo", typeAffinity = ColumnInfo.BLOB)
-        Byte[] logo;
+        @ColumnInfo(name ="logo")
+        String logo;
+
+    public LabelEntity(Integer id, String name, String description, String suggestion, String volume, String price, String logo) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.suggestion = suggestion;
+        this.volume = volume;
+        this.price = price;
+        this.logo = logo;
+    }
+
 
     public Integer getId() {
         return id;
@@ -75,11 +86,11 @@ public class LabelEntity {
         this.price = price;
     }
 
-    public Byte[] getLogo() {
+    public String getLogo() {
         return logo;
     }
 
-    public void setLogo(Byte[] logo) {
+    public void setLogo(String logo) {
         this.logo = logo;
     }
 }
