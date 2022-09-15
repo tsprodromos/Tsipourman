@@ -12,6 +12,7 @@ public class LabelsViewModel extends AndroidViewModel {
 
     private LabelsRepository repository;
     private LiveData<List<LabelEntity>> allLabels;
+
     public LabelsViewModel(@NonNull Application application) {
         super(application);
         repository = new LabelsRepository(application);
@@ -19,14 +20,17 @@ public class LabelsViewModel extends AndroidViewModel {
     }
 
     public void insert(LabelEntity labelEntity){
+
         repository.insert(labelEntity);
     }
 
     public void delete(LabelEntity labelEntity){
+
         repository.delete(labelEntity);
     }
 
     public LiveData<List<LabelEntity>> getAllLabels(){
+
         return allLabels;
     }
 }

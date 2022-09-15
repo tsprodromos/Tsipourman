@@ -11,7 +11,7 @@
         <item name="colorPrimary">#F39354</item>
     </style>
     <style name="Button.White" parent="ThemeOverlay.AppCompat">
-        <item name="colorAccent">@color/Black</item>
+        <item name="colorAccent">@color/White</item>
     </style>
 
 </resources>
