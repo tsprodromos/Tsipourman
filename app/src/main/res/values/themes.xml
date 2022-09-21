@@ -7,8 +7,18 @@
         <item name="colorAccent">@color/CornflowerBlue</item>
         <!-- Customize your theme here. -->
     </style>
+
     <style name="Theme.mytheme" parent="Theme.MaterialComponents.DayNight">
         <item name="colorPrimary">#F39354</item>
     </style>
+
+    <style name="Theme.Tsipourman.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.Tsipourman.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.Tsipourman.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>
