@@ -18,8 +18,6 @@ public class LabelEntity {
         @ColumnInfo(name = "suggestion")
         String suggestion;
 
-        @ColumnInfo(name = "volume")
-        String volume;
 
         @ColumnInfo(name = "price")
           String price;
@@ -27,12 +25,11 @@ public class LabelEntity {
         @ColumnInfo(name ="logo")
         String logo;
 
-    public LabelEntity(Integer id, String name, String description, String suggestion, String volume, String price, String logo) {
+    public LabelEntity(Integer id, String name, String description, String suggestion, String price, String logo) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.suggestion = suggestion;
-        this.volume = volume;
         this.price = price;
         this.logo = logo;
     }
@@ -70,13 +67,6 @@ public class LabelEntity {
         this.suggestion = suggestion;
     }
 
-    public String getVolume() {
-        return volume;
-    }
-
-    public void setVolume(String volume) {
-        this.volume = volume;
-    }
 
     public String getPrice() {
         return price;

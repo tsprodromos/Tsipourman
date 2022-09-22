@@ -17,6 +17,11 @@
     <string name="login_bg">Είσοδος</string>
     <string name="article_string">Article</string>
     <string name="add_label">Το θέλω</string>
+    <string name="lab_desc">Description</string>
+    <string name="lab_sug">Suggestion</string>
+    <string name="lab_price">Price</string>
+    <string name="name_label">Label Name</string>
+
 
     <string name="article_subheading">Article Subheading</string>
     <string name="paragraph"><p><b>Ποιος είναι;</b></p>\n\n
@@ -34,13 +39,5 @@
             Συνεχίζοντας στην ίδια φιλοσοφία έχουμε ταιριάξει μεζέδες οι οποίοι δένουν τέλεια με το κάθε απόσταγμα.\n\n
             Διατηρήσαμε ωστόσο τον λαϊκό χαρακτήρα της τσιπουροκατάστασης προσφέροντας λύσεις για κάθε ανάγκη και τσέπη.</p>
 </string>
-    <string name="title_activity_label">LabelActivity</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>

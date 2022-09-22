@@ -1,21 +1,23 @@
 package com.example.tsipourman;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
-import com.squareup.picasso.Picasso;
-
+import java.util.ArrayList;
 import java.util.List;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  implements RecyclerViewInterface{
     private LabelsViewModel labelsViewModel;
+
+    private List<LabelEntity> labels = new ArrayList<>();
 
 
     @Override
@@ -27,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView1.setLayoutManager(new LinearLayoutManager(this));
         recyclerView1.setHasFixedSize(true);
 
-        LabelsAdapter adapter = new LabelsAdapter();
+        LabelsAdapter adapter = new LabelsAdapter(this,labels,this);
         recyclerView1.setAdapter(adapter);
 
         labelsViewModel = new ViewModelProvider(this).get(LabelsViewModel.class);
@@ -37,7 +39,19 @@ public class MainActivity extends AppCompatActivity {
                 adapter.setLabels(labels);
             }
         });
-       
 
+        Log.i("MyTag",labels +"");
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Intent intent = new Intent(MainActivity.this,LabelActivity.class);
+        intent.putExtra("name",labels.get(position).name);
+        intent.putExtra("desc",labels.get(position).description);
+        intent.putExtra("suggestion",labels.get(position).suggestion);
+        intent.putExtra("logo",labels.get(position).logo);
+        intent.putExtra("price",labels.get(position).price);
+
+        startActivity(intent);
     }
 }

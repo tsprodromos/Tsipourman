@@ -2,6 +2,7 @@ package com.example.tsipourman;
 
 import static java.security.AccessController.getContext;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +18,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LabelsAdapter extends RecyclerView.Adapter<LabelsAdapter.LabelsHolder> {
+    private Context context;
     private List<LabelEntity> labels = new ArrayList<>();
+    private final RecyclerViewInterface recyclerViewInterface;
+
+    public LabelsAdapter(Context context, List<LabelEntity> labels, RecyclerViewInterface recyclerViewInterface) {
+        this.context= context;
+        this.labels = labels;
+        this.recyclerViewInterface = recyclerViewInterface;
+    }
 
 
     @NonNull
@@ -58,6 +67,18 @@ public class LabelsAdapter extends RecyclerView.Adapter<LabelsAdapter.LabelsHold
             name=itemView.findViewById(R.id.label_name);
             desc=itemView.findViewById(R.id.label_desc);
             imageView=itemView.findViewById(R.id.img_view);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(recyclerViewInterface !=null){
+                        int pos = getAdapterPosition();
+
+                        if(pos != RecyclerView.NO_POSITION){
+                            recyclerViewInterface.onItemClick(pos);
+                        }
+                    }
+                }
+            });
         }
     }
 }
