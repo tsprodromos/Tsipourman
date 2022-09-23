@@ -3,6 +3,7 @@ package com.example.tsipourman;
 
 import android.content.Context;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.room.Database;
@@ -28,11 +29,11 @@ public abstract class MyDatabase extends RoomDatabase {
     private static MyDatabase myDatabase;
 
     private static Context activity;
-    public LabelsDao labelsDao;
+    public static LabelsDao labelsDao;
 
     public abstract UserDao userDao();
     public abstract LabelsDao labelsDao();
-    
+
 
     public static synchronized MyDatabase getMyDatabase(Context context){
 
@@ -65,39 +66,40 @@ public abstract class MyDatabase extends RoomDatabase {
         }
         @Override
         protected Void doInBackground(Void... voids) {
-            labelsDao.insert(new LabelEntity(1,
-                    "γργγργ",
-                    "Απόσταγμα στέμφυλων (τσίκουδα) και Παλαιωμένο απόσταγμα από το υπόσκαφο οινοποιείο του Κωνσταντάκη (Kostantakis Milos Cave Winery) στα έγκατα της ηφαιστειογενούς Μήλου.", "Παξιμάδι με κάνναβη.\n Γραβιέρα premium με 4 πιπέρια.",
-                    "330ml",
-                    "https://imageproxy.wolt.com/menu/menu-images/615329284e88f5797fb4167c/7056382c-20fd-11ec-9f07-8e926c1a41c3_product__56_.jpeg"));
-            fillWithStartingData(activity);
+//            labelsDao.insert(new LabelEntity(1,
+//                    "γργγργ",
+//                    "Απόσταγμα στέμφυλων (τσίκουδα) και Παλαιωμένο απόσταγμα από το υπόσκαφο οινοποιείο του Κωνσταντάκη (Kostantakis Milos Cave Winery) στα έγκατα της ηφαιστειογενούς Μήλου.", "Παξιμάδι με κάνναβη.\n Γραβιέρα premium με 4 πιπέρια.",
+//                    "330ml",
+//                    "https://imageproxy.wolt.com/menu/menu-images/615329284e88f5797fb4167c/7056382c-20fd-11ec-9f07-8e926c1a41c3_product__56_.jpeg"));
+            //fillWithStartingData(activity);
+
+            JSONArray labels = loadJSONArray(activity.getApplicationContext());
+
+            try{
+
+                for(int i = 0; i < labels.length(); i++){
+                    JSONObject label = labels.getJSONObject(i);
+
+                    String labelName= label.getString("name");
+                    String labelDesc= label.getString("description");
+                    String labelSuggestion= label.getString("suggestion");
+                    String labelPrice= label.getString("price");
+                    String labelLogo=label.getString("logo");
+
+                    labelsDao.insert(new LabelEntity(i+1,labelName,labelDesc,labelSuggestion,labelPrice,labelLogo));
+
+                }
+            }catch (JSONException e){
+
+                Log.i("TEST", e.getMessage());
+
+            }
+
             return null;
         }
     }
 
-    private static void fillWithStartingData(Context context){
-        LabelsDao dao = getMyDatabase(context).labelsDao();
 
-        JSONArray labels = loadJSONArray(context);
-
-        try{
-
-            for(int i= 0; i < labels.length(); i++){
-                JSONObject label = labels.getJSONObject(i);
-
-                String labelName= label.getString("name");
-                String labelDesc= label.getString("description");
-                String labelSuggestion= label.getString("suggestion");
-                String labelPrice= label.getString(" price");
-                String labelLogo=label.getString("logo");
-
-                dao.insert(new LabelEntity(i+1,labelName,labelDesc,labelSuggestion,labelPrice,labelLogo));
-
-            }
-        }catch (JSONException e){
-
-        }
-    }
 
     private static JSONArray loadJSONArray(Context context){
         StringBuilder builder = new StringBuilder();
