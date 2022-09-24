@@ -17,7 +17,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity  implements RecyclerViewInterface{
     private LabelsViewModel labelsViewModel;
 
-    private List<LabelEntity> labels = new ArrayList<>();
+    public List<LabelEntity> mlabels = new ArrayList<>();
 
 
     @Override
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity  implements RecyclerViewInte
         recyclerView1.setLayoutManager(new LinearLayoutManager(this));
         recyclerView1.setHasFixedSize(true);
 
-        LabelsAdapter adapter = new LabelsAdapter(this,labels,this);
+        LabelsAdapter adapter = new LabelsAdapter(this,mlabels,this);
         recyclerView1.setAdapter(adapter);
 
         labelsViewModel = new ViewModelProvider(this).get(LabelsViewModel.class);
@@ -37,20 +37,26 @@ public class MainActivity extends AppCompatActivity  implements RecyclerViewInte
             @Override
             public void onChanged(List<LabelEntity> labels) {
                 adapter.setLabels(labels);
+                Log.i("MyTag0",adapter +"");
+
+                Log.i("MyTag1",labels +"");
+                mlabels = labels;
+                Log.i("MyTag2",mlabels +"");
+
             }
         });
 
-        Log.i("MyTag",labels +"");
+        Log.i("MyTag3",mlabels +"");
     }
 
     @Override
     public void onItemClick(int position) {
         Intent intent = new Intent(MainActivity.this,LabelActivity.class);
-        intent.putExtra("name",labels.get(position).name);
-        intent.putExtra("desc",labels.get(position).description);
-        intent.putExtra("suggestion",labels.get(position).suggestion);
-        intent.putExtra("logo",labels.get(position).logo);
-        intent.putExtra("price",labels.get(position).price);
+        intent.putExtra("name",mlabels.get(position).name);
+        intent.putExtra("desc",mlabels.get(position).description);
+        intent.putExtra("suggestion",mlabels.get(position).suggestion);
+        intent.putExtra("logo",mlabels.get(position).logo);
+        intent.putExtra("price",mlabels.get(position).price);
 
         startActivity(intent);
     }

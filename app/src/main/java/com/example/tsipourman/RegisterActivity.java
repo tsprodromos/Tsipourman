@@ -18,17 +18,18 @@ public class RegisterActivity extends AppCompatActivity {
     MyDatabase myDb;
     UserDao userDao;
 
-    EditText email,username,password;
+    EditText fname,lname,phone,email,username,password;
     Button registerbtn;
-    public static boolean isAllowed=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-
-        email=findViewById(R.id.myemail);
+        fname=findViewById(R.id.fname);
+        lname=findViewById(R.id.lname);
+        phone=findViewById(R.id.phone);
+        email=findViewById(R.id.email);
         username=findViewById(R.id.myusername);
         password=findViewById(R.id.mypassword);
         registerbtn=findViewById(R.id.registerbtn);
@@ -43,6 +44,10 @@ public class RegisterActivity extends AppCompatActivity {
                 userEntity.setEmail(email.getText().toString());
                 userEntity.setUsername(username.getText().toString());
                 userEntity.setPassword(password.getText().toString());
+                userEntity.setFname(fname.getText().toString());
+                userEntity.setLname(lname.getText().toString());
+                userEntity.setPhone(phone.getText().toString());
+
 
                 if (validateInput(userEntity)) {
                     //Insert Operation
@@ -80,7 +85,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private Boolean validateInput(UserEntity userEntity){
-        if(userEntity.getUsername().isEmpty() || userEntity.getPassword().isEmpty() || userEntity.getEmail().isEmpty()){
+        if(userEntity.getFname().isEmpty()|| userEntity.getLname().isEmpty()|| userEntity.getPhone().isEmpty()||userEntity.getUsername().isEmpty() || userEntity.getPassword().isEmpty() || userEntity.getEmail().isEmpty()){
                 return false;
         }
         return true;

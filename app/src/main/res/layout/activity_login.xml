@@ -63,6 +63,7 @@
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
             android:paddingBottom="15dp"
+            android:inputType="textPassword"
             android:textColor="@color/White"
             android:textColorHint="@color/White"
             app:layout_constraintBottom_toBottomOf="parent"

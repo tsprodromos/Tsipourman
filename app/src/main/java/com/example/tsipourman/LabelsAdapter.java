@@ -43,7 +43,7 @@ public class LabelsAdapter extends RecyclerView.Adapter<LabelsAdapter.LabelsHold
         LabelEntity curLabel = labels.get(position);
         labelsHolder.name.setText(curLabel.getName());
         labelsHolder.desc.setText(curLabel.getDescription());
-        Picasso.get().load("https://imageproxy.wolt.com/menu/menu-images/615329284e88f5797fb4167c/7056382c-20fd-11ec-9f07-8e926c1a41c3_product__56_.jpeg").into(labelsHolder.imageView);
+        Picasso.get().load(curLabel.getLogo()).into(labelsHolder.imageView);
     }
 
     @Override

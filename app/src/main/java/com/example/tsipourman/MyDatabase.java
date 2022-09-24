@@ -74,7 +74,7 @@ public abstract class MyDatabase extends RoomDatabase {
             //fillWithStartingData(activity);
 
             JSONArray labels = loadJSONArray(activity.getApplicationContext());
-
+            Log.i("MYU", labels+ "");
             try{
 
                 for(int i = 0; i < labels.length(); i++){
@@ -99,7 +99,31 @@ public abstract class MyDatabase extends RoomDatabase {
         }
     }
 
+    private static void fillWithStartingData(Context context){
 
+        JSONArray labels = loadJSONArray(context);
+
+
+        try{
+
+            for(int i = 0; i < labels.length(); i++){
+                JSONObject label = labels.getJSONObject(i);
+
+                String labelName= label.getString("name");
+                String labelDesc= label.getString("description");
+                String labelSuggestion= label.getString("suggestion");
+                String labelPrice= label.getString("price");
+                String labelLogo=label.getString("logo");
+
+                labelsDao.insert(new LabelEntity(i+1,labelName,labelDesc,labelSuggestion,labelPrice,labelLogo));
+                break;
+            }
+        }catch (JSONException e){
+
+            Log.i("TEST", e.getMessage());
+
+        }
+    }
 
     private static JSONArray loadJSONArray(Context context){
         StringBuilder builder = new StringBuilder();

@@ -8,6 +8,9 @@
     <string name="step3">Μόλις η παραγγελία σου είναι έτοιμη θα ειδοποιηθείς για την παράδοσή της</string>
     <string name="register_bg_text">Ξεκίνα</string>
     <string name="login_bg_text">Έχω ήδη λογαριασμό</string>
+    <string name="fname">Όνομα</string>
+    <string name="lname">Επίθετο</string>
+    <string name="phone">Τηλέφωνο</string>
     <string name="username">Όνομα Χρήστη</string>
     <string name="password">Κωδικός</string>
     <string name="email">Email</string>
@@ -17,9 +20,9 @@
     <string name="login_bg">Είσοδος</string>
     <string name="article_string">Article</string>
     <string name="add_label">Το θέλω</string>
-    <string name="lab_desc">Description</string>
-    <string name="lab_sug">Suggestion</string>
-    <string name="lab_price">Price</string>
+    <string name="lab_desc">Περιγραφή</string>
+    <string name="lab_sug">Προτείνεται με:</string>
+    <string name="lab_price">Τιμή</string>
     <string name="name_label">Label Name</string>
 
 

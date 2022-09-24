@@ -20,6 +20,16 @@ public class UserEntity {
         @ColumnInfo(name = "email")
         String email;
 
+        @ColumnInfo(name = "fname")
+        String fname;
+
+        @ColumnInfo(name = "lname")
+        String lname;
+
+        @ColumnInfo(name = "phone")
+        String phone;
+
+
 
 
         public Integer getId() {
@@ -52,5 +62,29 @@ public class UserEntity {
 
         public void setEmail(String email) {
                 this.email = email;
+        }
+
+        public String getFname() {
+                return fname;
+        }
+
+        public void setFname(String fname) {
+                this.fname = fname;
+        }
+
+        public String getLname() {
+                return lname;
+        }
+
+        public void setLname(String lname) {
+                this.lname = lname;
+        }
+
+        public String getPhone() {
+                return phone;
+        }
+
+        public void setPhone(String phone) {
+                this.phone = phone;
         }
 }

@@ -15,7 +15,6 @@ public class LoginActivity extends AppCompatActivity {
 
     EditText username,password;
     Button btnlogin;
-    Session session;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,12 +26,6 @@ public class LoginActivity extends AppCompatActivity {
         btnlogin=findViewById(R.id.loginbtn);
 
 
-       session = new Session(this);
-
-       if(session.loggedin()){
-         startActivity(new Intent(LoginActivity.this,MainActivity.class));
-          finish();
-        }
 
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override

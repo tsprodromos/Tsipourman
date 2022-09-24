@@ -17,115 +17,163 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.051" />
+        app:layout_constraintVertical_bias="0.051"
+        android:contentDescription="TODO" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@drawable/view_bg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent=".78"
-        android:background="@drawable/view_bg"
+        app:layout_constraintHeight_percent=".80"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0">
 
+
         <TextView
             android:id="@+id/registertv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
             android:text="@string/register"
             android:textColor="@color/White"
-            android:textSize="32sp"
+            android:textSize="25sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/myemail"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.331" />
-
-
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/myemail"
+            android:id="@+id/fname"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
             android:background="@drawable/edit_text_bg"
-            android:hint="@string/email"
-            android:paddingTop="15dp"
+            android:hint="@string/fname"
             android:paddingLeft="15dp"
+            android:paddingTop="15dp"
             android:paddingRight="15dp"
             android:paddingBottom="15dp"
             android:textColor="@color/White"
             android:textColorHint="@color/White"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias=".5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias=".3"
+            app:layout_constraintTop_toBottomOf="@+id/registertv"
+            app:layout_constraintWidth_percent=".8" />
+
+        <EditText
+            android:id="@+id/lname"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit_text_bg"
+            android:hint="@string/lname"
+            android:paddingLeft="15dp"
+            android:paddingTop="15dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="15dp"
+            android:textColor="@color/White"
+            android:textColorHint="@color/White"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fname"
+            app:layout_constraintWidth_percent=".8" />
+
+        <EditText
+            android:id="@+id/phone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit_text_bg"
+            android:hint="@string/phone"
+            android:paddingLeft="15dp"
+            android:paddingTop="15dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="15dp"
+            android:inputType="phone"
+            android:textColor="@color/White"
+            android:textColorHint="@color/White"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lname"
+            app:layout_constraintWidth_percent=".8"
+            tools:ignore="DuplicateClickableBoundsCheck" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit_text_bg"
+            android:hint="@string/email"
+            android:paddingLeft="15dp"
+            android:paddingTop="15dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="15dp"
+            android:textColor="@color/White"
+            android:textColorHint="@color/White"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/phone"
             app:layout_constraintWidth_percent=".8" />
 
         <EditText
             android:id="@+id/myusername"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/edit_text_bg"
             android:hint="@string/username"
-            android:paddingTop="15dp"
             android:paddingLeft="15dp"
+            android:paddingTop="15dp"
             android:paddingRight="15dp"
             android:paddingBottom="15dp"
             android:textColor="@color/White"
             android:textColorHint="@color/White"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/myemail"
-            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintTop_toBottomOf="@+id/email"
             app:layout_constraintWidth_percent=".8" />
 
         <EditText
             android:id="@+id/mypassword"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/edit_text_bg"
             android:hint="@string/password"
-            android:paddingTop="15dp"
+            android:inputType="textPassword"
             android:paddingLeft="15dp"
+            android:paddingTop="15dp"
             android:paddingRight="15dp"
             android:paddingBottom="15dp"
             android:textColor="@color/White"
             android:textColorHint="@color/White"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/myusername"
-            app:layout_constraintVertical_bias="0.0"
             app:layout_constraintWidth_percent=".8" />
-
 
         <Button
             android:id="@+id/registerbtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
             android:background="@drawable/button_bg"
             android:text="@string/register_bg"
+            android:textAllCaps="false"
             android:textColor="@color/White"
             android:textSize="16sp"
             android:textStyle="bold"
-            android:textAllCaps="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.768"
+            app:layout_constraintTop_toBottomOf="@+id/mypassword"
+            app:layout_constraintVertical_bias="0.0"
             app:layout_constraintWidth_percent=".8" />
-
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
