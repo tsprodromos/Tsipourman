@@ -21,7 +21,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 
-@Database(entities = {UserEntity.class,LabelEntity.class}, version =  2)
+@Database(entities = {UserEntity.class,LabelEntity.class,OrderEntity.class}, version =  3)
 public abstract class MyDatabase extends RoomDatabase {
 
     private static final String dbName = "mydb";
@@ -30,9 +30,12 @@ public abstract class MyDatabase extends RoomDatabase {
 
     private static Context activity;
     public static LabelsDao labelsDao;
+    public static OrderDao ordersDao;
+
 
     public abstract UserDao userDao();
     public abstract LabelsDao labelsDao();
+
 
 
     public static synchronized MyDatabase getMyDatabase(Context context){
@@ -66,15 +69,9 @@ public abstract class MyDatabase extends RoomDatabase {
         }
         @Override
         protected Void doInBackground(Void... voids) {
-//            labelsDao.insert(new LabelEntity(1,
-//                    "γργγργ",
-//                    "Απόσταγμα στέμφυλων (τσίκουδα) και Παλαιωμένο απόσταγμα από το υπόσκαφο οινοποιείο του Κωνσταντάκη (Kostantakis Milos Cave Winery) στα έγκατα της ηφαιστειογενούς Μήλου.", "Παξιμάδι με κάνναβη.\n Γραβιέρα premium με 4 πιπέρια.",
-//                    "330ml",
-//                    "https://imageproxy.wolt.com/menu/menu-images/615329284e88f5797fb4167c/7056382c-20fd-11ec-9f07-8e926c1a41c3_product__56_.jpeg"));
-            //fillWithStartingData(activity);
+
 
             JSONArray labels = loadJSONArray(activity.getApplicationContext());
-            Log.i("MYU", labels+ "");
             try{
 
                 for(int i = 0; i < labels.length(); i++){
@@ -96,32 +93,6 @@ public abstract class MyDatabase extends RoomDatabase {
             }
 
             return null;
-        }
-    }
-
-    private static void fillWithStartingData(Context context){
-
-        JSONArray labels = loadJSONArray(context);
-
-
-        try{
-
-            for(int i = 0; i < labels.length(); i++){
-                JSONObject label = labels.getJSONObject(i);
-
-                String labelName= label.getString("name");
-                String labelDesc= label.getString("description");
-                String labelSuggestion= label.getString("suggestion");
-                String labelPrice= label.getString("price");
-                String labelLogo=label.getString("logo");
-
-                labelsDao.insert(new LabelEntity(i+1,labelName,labelDesc,labelSuggestion,labelPrice,labelLogo));
-                break;
-            }
-        }catch (JSONException e){
-
-            Log.i("TEST", e.getMessage());
-
         }
     }
 

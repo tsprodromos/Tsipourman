@@ -2,11 +2,14 @@ package com.example.tsipourman;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -22,7 +25,6 @@ public class LabelActivity extends AppCompatActivity {
         String suggestion = getIntent().getStringExtra("suggestion");
         String price = getIntent().getStringExtra("price");
         String image = getIntent().getStringExtra("logo");
-        Log.i("mimg",image +"");
 
         TextView lab_name = findViewById(R.id.name_lab);
         TextView lab_desc = findViewById(R.id.lab_desc_con);
@@ -40,7 +42,18 @@ public class LabelActivity extends AppCompatActivity {
         Picasso.get().load(image).into(lab_img);
         lab_price.setText(price);
 
-
+        add_lab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(getApplicationContext(), "Προστέθηκε στο καλάθι!", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                startActivity(new Intent(LabelActivity.this,MainActivity.class));
+            }
+        });
 
 
     }

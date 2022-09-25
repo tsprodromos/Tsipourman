@@ -9,7 +9,7 @@ import androidx.room.PrimaryKey;
 public class UserEntity {
 
         @PrimaryKey(autoGenerate = true)
-        Integer id;
+        Integer userId;
 
         @ColumnInfo(name = "username")
         String username;
@@ -29,15 +29,16 @@ public class UserEntity {
         @ColumnInfo(name = "phone")
         String phone;
 
+        public UserEntity() {
 
-
-
-        public Integer getId() {
-                return id;
         }
 
-        public void setId(Integer id) {
-                this.id = id;
+        public Integer getUserId() {
+                return userId;
+        }
+
+        public void setUserId(Integer userId) {
+                this.userId = userId;
         }
 
         public String getUsername() {

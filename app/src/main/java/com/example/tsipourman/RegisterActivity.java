@@ -67,7 +67,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 //Register User
                                 userDao.insertUser(userEntity);
                                 String name = userEntity.getUsername();
-                                startActivity(new Intent(RegisterActivity.this,MainActivity.class).putExtra("name",name));
+                                startActivity(new Intent(RegisterActivity.this,MainActivity.class));
                                 runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {

@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "labels")
 public class LabelEntity {
         @PrimaryKey(autoGenerate = true)
-        Integer id;
+        Integer labelId;
 
         @ColumnInfo(name = "name")
         String name;
@@ -25,8 +25,8 @@ public class LabelEntity {
         @ColumnInfo(name ="logo")
         String logo;
 
-    public LabelEntity(Integer id, String name, String description, String suggestion, String price, String logo) {
-        this.id = id;
+    public LabelEntity(Integer labelId, String name, String description, String suggestion, String price, String logo) {
+        this.labelId = labelId;
         this.name = name;
         this.description = description;
         this.suggestion = suggestion;
@@ -34,13 +34,12 @@ public class LabelEntity {
         this.logo = logo;
     }
 
-
-    public Integer getId() {
-        return id;
+    public Integer getLabelId() {
+        return labelId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setLabelId(Integer labelId) {
+        this.labelId = labelId;
     }
 
     public String getName() {
